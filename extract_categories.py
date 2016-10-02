@@ -20,11 +20,19 @@ def main():
     names = get_list("name")
     categories = get_list("category")
     ids = get_list("_id")
+
+    category_list= set()
+    for c in categories:
+        [ category_list.add(x) for x in c ]
+    category_list = list(category_list)
+    
     merchant_categories = {}
     for i in range(len(ids)):
         merchant_categories[ids[i]] =  categories[i]
     with open('merchant_categories.json','w') as f:
         json.dump(merchant_categories,f)
+    with open('unique_categories.json','w') as f:
+        json.dump(category_list,f)
 
 if __name__=="__main__":
     main()
