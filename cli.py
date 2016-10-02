@@ -16,7 +16,8 @@ def view_transactions():
         url,
         headers={'content-type':'application/json'},
     )
-    print(response.json())
+    with open('transactions.json','w') as f:
+        json.dump(response.json(),f)
 def purchase():
    # acc_id = input("Enter account id: ")
    # print("\n")
