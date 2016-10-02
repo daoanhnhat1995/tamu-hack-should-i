@@ -20,9 +20,9 @@ def main():
     names = get_list("name")
     categories = get_list("category")
     ids = get_list("_id")
-    merchant_categories = []
+    merchant_categories = {}
     for i in range(len(ids)):
-        merchant_categories.append({ids[i]: categories[i]})
+        merchant_categories[ids[i]] =  categories[i]
     with open('merchant_categories.json','w') as f:
         json.dump(merchant_categories,f)
 

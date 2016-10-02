@@ -8,7 +8,7 @@ def extract_key(x,key):
         return x[key]
     else:
         return None
-        
+
 def get_list(key):
     return list(map(lambda x : extract_key(x,key),transactions))
 
@@ -17,7 +17,7 @@ def process_extract():
     print(purchase_dates)
     purchase_amounts = get_list("amount")
     print(purchase_amounts)
-    merchant_ids = get_list("payee_id")
+    merchant_ids = get_list("merchant_id")
     print(merchant_ids)
 
 if __name__=="__main__":
